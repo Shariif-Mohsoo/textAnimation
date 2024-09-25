@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Text Background</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: #000;
+        font-family: "Times New Roman", Times, serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .heading-1 {
+        text-align: center;
+        font-size: 8rem;
+        margin-bottom: 2rem;
+      }
+      .heading-2 {
+        text-align: center;
+        font-size: 6rem;
+      }
+      .heading-1,
+      .heading-2 {
+        color: transparent;
+        background-image: linear-gradient(
+          to right bottom,
+          rgba(0, 256, 0, 0.4),
+          rgba(22, 32, 33, 0.2),
+          rgba(0, 256, 0, 1)
+        );
+        background-position: center;
+        -webkit-background-clip: text;
+        animation: moveRight 2s ease-in-out infinite backwards;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      }
+      @keyframes moveRight {
+        0% {
+          background-image: linear-gradient(
+            to right,
+            rgba(0, 255, 0, 0.2),
+            rgba(0, 255, 0, 1)
+          );
+          text-shadow: 0 1rem 3rem green;
+        }
+        30% {
+          background-image: linear-gradient(
+            to bottom,
+            rgba(255, 0, 0, 0.2),
+            rgba(255, 0, 0, 1)
+          );
+          text-shadow: 0 1rem 3rem red;
+        }
+
+        70% {
+          background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 255, 0.2),
+            rgba(0, 0, 255, 1)
+          );
+          text-shadow: 0 1rem 3rem blue;
+        }
+        100% {
+          background-image: linear-gradient(
+            to left,
+            rgba(120, 212, 102, 0.2),
+            rgba(120, 212, 102, 1)
+          );
+          text-shadow: 0 1rem 3rem lightgreen;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 class="heading-1">Shariif</h1>
+      <h2 class="heading-2">Mohsoo</h2>
+    </div>
+  </body>
+</html>
